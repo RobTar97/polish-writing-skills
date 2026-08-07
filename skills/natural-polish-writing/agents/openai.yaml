@@ -1,0 +1,4 @@
+interface:
+  display_name: "Natural Polish Writing"
+  short_description: "Natural, faithful Polish prose editing"
+  default_prompt: "Use $natural-polish-writing to rewrite this text into natural Polish while preserving every fact, qualification, and term."

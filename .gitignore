@@ -1,0 +1,7 @@
+.worktrees/
+.superpowers/
+*.skill
+
+# Local research inputs; keep them out of the public package.
+Polish AI-Detection Patterns and Natural Writing Rules — Reference for a Polish Perfect Writing Skill.md
+polish langauge skill ]deep-research-report.md

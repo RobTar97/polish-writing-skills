@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
+  <title id="title">Natural Polish Writing</title>
+  <desc id="desc">Rigid lines become a varied but controlled rhythm around a protected carmine core.</desc>
+  <rect width="640" height="320" rx="28" fill="#f6f0e6"/>
+  <g stroke="#d9d0c3" stroke-width="1" opacity=".58">
+    <path d="M64 0v320M128 0v320M192 0v320M256 0v320M320 0v320M384 0v320M448 0v320M512 0v320M576 0v320"/>
+    <path d="M0 64h640M0 128h640M0 192h640M0 256h640"/>
+  </g>
+  <g fill="none" stroke="#2a2928" stroke-linecap="round">
+    <path d="M72 108h136c50 0 65 25 102 52 45 32 82 30 119-5 43-41 67-57 139-57" stroke-width="12"/>
+    <path d="M72 146h136c43 0 70 13 105 29 47 21 82 17 116-9 44-34 78-39 139-29" stroke-width="8" opacity=".82"/>
+    <path d="M72 184h136c44 0 68-2 102-9 43-9 80 1 116 29 45 35 79 39 142 18" stroke-width="7" opacity=".66"/>
+    <path d="M72 222h136c51 0 67-15 101-37 46-30 85-21 121 26 38 49 72 55 138 31" stroke-width="5" opacity=".48"/>
+  </g>
+  <circle cx="320" cy="160" r="35" fill="#b62234"/>
+  <circle cx="320" cy="160" r="13" fill="#f6f0e6"/>
+  <path d="M320 102v23M320 195v23" stroke="#b62234" stroke-width="8" stroke-linecap="round"/>
+</svg>
