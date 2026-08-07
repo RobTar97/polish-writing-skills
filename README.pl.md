@@ -113,7 +113,7 @@ Ten przykład pokazuje, co się zmienia, co pozostaje bez zmian i czego skill ni
     </td>
     <td width="50%" valign="top">
       <h3>Po</h3>
-      <p>Plan Pro umożliwia 12 osobom wspólne planowanie zadań. Okres próbny trwa 14 dni, a po jego zakończeniu abonament kosztuje 29 zł miesięcznie. Do korzystania z Plan Pro potrzebne jest połączenie z internetem.</p>
+      <p>Plan Pro umożliwia 12 osobom wspólne planowanie zadań. Okres próbny trwa 14 dni, a po jego zakończeniu abonament kosztuje 29 zł miesięcznie. Do korzystania z planu Pro potrzebne jest połączenie z internetem.</p>
     </td>
   </tr>
 </table>
