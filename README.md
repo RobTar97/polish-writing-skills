@@ -7,7 +7,6 @@
     <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-292827?style=flat-square" alt="Agent Skills compatible" /></a>
     <img src="https://img.shields.io/badge/skills-1-b62234?style=flat-square" alt="One skill" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-5b5753?style=flat-square" alt="MIT License" /></a>
-    <a href="https://skills.sh/RobTar97/polish-writing-skills"><img src="https://skills.sh/b/RobTar97/polish-writing-skills" alt="skills.sh installs" /></a>
   </p>
   <p>
     <a href="#quick-install"><img src="https://img.shields.io/badge/Install_with-skills.sh-b62234?style=for-the-badge" alt="Install with skills.sh" /></a>
@@ -33,6 +32,35 @@ The skill improves the Polish without quietly changing what the text says.
 </table>
 
 > The skill performs a safe language pass on structured UI resources and relationship-sensitive formal correspondence, then flags work that needs specialized localization or business-writing judgment.
+
+## Agent compatibility
+
+Yes—`natural-polish-writing` is a basic, portable Agent Skill. Its core is a standard `SKILL.md` with Markdown references; it does not depend on hooks, model-specific tools, or a proprietary runtime. The official [skills CLI compatibility matrix](https://github.com/vercel-labs/skills#compatibility) marks basic skills as supported across the major coding agents.
+
+| Agent | CLI identifier | Basic skill support |
+| --- | --- | --- |
+| OpenAI Codex | `codex` | Yes |
+| Claude Code | `claude-code` | Yes |
+| OpenCode | `opencode` | Yes |
+| Antigravity | `antigravity` | Yes |
+| Cursor | `cursor` | Yes |
+| Gemini CLI | `gemini-cli` | Yes |
+| GitHub Copilot | `github-copilot` | Yes |
+| Windsurf | `windsurf` | Yes |
+
+The current matrix also covers OpenHands, Cline, Roo Code, Amp, OpenClaw, Pi, Qoder, Zed, and many other agents that consume the shared skill format.
+
+The `agents/openai.yaml` file adds optional OpenAI-facing metadata. Other agents can ignore it safely and use the shared `SKILL.md` instructions.
+
+Install to several agents at once:
+
+```bash
+npx skills@latest add RobTar97/polish-writing-skills \
+  --skill natural-polish-writing \
+  -a codex -a claude-code -a opencode -a antigravity
+```
+
+Omit `-a` to let the CLI detect installed agents interactively.
 
 ## Quick install
 
@@ -95,6 +123,57 @@ This example shows what changes, what stays true, and what the skill refuses to 
 **Changed:** generic framing, unsupported promotional evaluation, repetitive connective language, and the empty reminder frame. No capability, proof, urgency, or promise was added.
 
 This is a traceable editing example, not an automated benchmark. The checks map to the skill’s [editing priorities](skills/natural-polish-writing/references/editing-priorities.md) and [review checklist](skills/natural-polish-writing/references/review-checklist.md).
+
+## More verified Polish edits
+
+### Public machine-generated sample
+
+The [ŚMIGIEL dataset](https://huggingface.co/datasets/strebeyko/smigiel) is a CC BY 4.0 corpus created for research on machine-generated Polish and used by the [PolEval 2025 task](https://poleval.pl/tasks/task1). It labels the following short excerpt as machine-generated (`model: bielik-md`, `strategy: dbs`):
+
+> „Ponadto, artykuł powinien być aktualny i uwzględniać najnowsze dane oraz interpretacje wydarzeń z turnieju, aby zapewnić czytelnikom najbardziej aktualne i kompletne informacje.”
+
+**Edited with `natural-polish-writing`:**
+
+> Artykuł powinien uwzględniać najnowsze dane i interpretacje wydarzeń z turnieju, aby zapewnić czytelnikom kompletne informacje.
+
+The edit removes the unjustified comma and empty *ponadto*, reduces three overlapping recency markers to one, and cuts the sentence from 22 to 15 words. It preserves the instruction to include recent data, interpretations, and complete information; it adds no facts.
+
+### Institutional notice
+
+#### Institutional source
+
+> Uprzejmie informujemy, iż w związku z koniecznością przeprowadzenia prac modernizacyjnych nastąpi czasowe wstrzymanie funkcjonowania systemu w godzinach od 22:00 do 23:00.
+
+#### Institutional edit
+
+> System będzie niedostępny od 22:00 do 23:00 z powodu prac modernizacyjnych.
+
+The operational consequence comes first. The time window and cause remain unchanged; no date, apology, or promise is invented.
+
+### Academic restraint
+
+#### Academic source
+
+> W badaniu zastosowano regresję logistyczną. Wyniki nie pozwalają stwierdzić związku przyczynowego, ale mogą wskazywać na wzrost prawdopodobieństwa o 15%.
+
+#### Academic edit
+
+> W badaniu zastosowano regresję logistyczną. Wyniki nie pozwalają stwierdzić związku przyczynowego, mogą jednak wskazywać na wzrost prawdopodobieństwa o 15%.
+
+The valid academic passive stays. The edit preserves negation, cautious modality, the 15% figure, and the distinction between a possible statistical indication and causation.
+
+### Evaluation points
+
+Score each dimension from 0 to 2: semantic and factual fidelity, grammatical correctness, genre/register fit, naturalness and information flow, and edit restraint with no invention.
+
+| Case | Fidelity | Grammar | Genre | Naturalness | Restraint | Total |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Plan Pro feature copy | 2 | 2 | 2 | 2 | 2 | **10/10** |
+| ŚMIGIEL excerpt | 2 | 2 | 1 | 2 | 2 | **9/10** |
+| Institutional notice | 2 | 2 | 2 | 2 | 2 | **10/10** |
+| Academic passage | 2 | 2 | 2 | 2 | 2 | **10/10** |
+
+The corpus excerpt receives one genre point because the public fragment lacks its full document context. These are transparent manual editorial checks, not native-speaker study results, detector scores, or claims of benchmark performance.
 
 ## Try it
 
