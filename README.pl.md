@@ -2,7 +2,7 @@
   <img src="assets/readme-hero.png" alt="Abstrakcyjne karminowe i grafitowe formy na kremowej siatce redakcyjnej" width="100%" />
   <h1>Polish Writing Skills</h1>
   <p><strong>Naturalna polszczyzna dopasowana do gatunku i sytuacji — bez zmiany sensu.</strong></p>
-  <p>Otwarty Agent Skill do redagowania i tłumaczenia tekstów na naturalny język polski z rygorystycznym zachowaniem faktów.</p>
+  <p>Otwarty skill dla agentów AI, który redaguje i tłumaczy teksty na współczesną polszczyznę, ściśle zachowując fakty.</p>
   <p>
     <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-292827?style=flat-square" alt="Zgodność z Agent Skills" /></a>
     <img src="https://img.shields.io/badge/skills-1-b62234?style=flat-square" alt="Jeden skill" />
@@ -16,7 +16,7 @@
 
 ---
 
-## Jeden skill, jedna zasada redakcyjna
+## Jeden skill, jedna umowa redakcyjna
 
 Skill poprawia polszczyznę, ale nie zmienia po cichu tego, co mówi tekst.
 
@@ -31,13 +31,13 @@ Skill poprawia polszczyznę, ale nie zmienia po cichu tego, co mówi tekst.
   </tr>
 </table>
 
-> W przypadku strukturyzowanych zasobów UI lub korespondencji wymagającej szczególnego wyczucia relacji skill wykonuje bezpieczną korektę językową i wskazuje zakres, który wymaga specjalistycznej lokalizacji albo redakcji biznesowej.
+> W przypadku strukturyzowanych zasobów interfejsu lub korespondencji wymagającej szczególnego wyczucia relacji skill ogranicza się do bezpiecznej korekty językowej. Wskazuje też elementy, które wymagają specjalistycznej lokalizacji albo redakcji biznesowej.
 
 ## Zgodność z agentami
 
-Tak — `natural-polish-writing` jest podstawowym, przenośnym Agent Skill. Jego rdzeń stanowi standardowy plik `SKILL.md` z referencjami w Markdownie; skill nie zależy od hooków, narzędzi konkretnego modelu ani zastrzeżonego środowiska uruchomieniowego. Oficjalna [tabela zgodności skills CLI](https://github.com/vercel-labs/skills#compatibility) potwierdza obsługę podstawowych skilli przez najpopularniejszych agentów programistycznych.
+Tak. `natural-polish-writing` to przenośny skill zgodny z podstawowym formatem Agent Skills. Jego rdzeniem jest standardowy plik `SKILL.md` oraz materiały referencyjne w Markdownie. Nie wymaga hooków, narzędzi właściwych dla konkretnego modelu ani zamkniętego środowiska uruchomieniowego. Oficjalna [tabela zgodności skills CLI](https://github.com/vercel-labs/skills#compatibility) potwierdza obsługę tego formatu przez najpopularniejszych agentów programistycznych.
 
-| Agent | Identyfikator CLI | Obsługa podstawowego skilla |
+| Agent | Identyfikator CLI | Obsługa skilla |
 | --- | --- | --- |
 | OpenAI Codex | `codex` | Tak |
 | Claude Code | `claude-code` | Tak |
@@ -48,9 +48,9 @@ Tak — `natural-polish-writing` jest podstawowym, przenośnym Agent Skill. Jego
 | GitHub Copilot | `github-copilot` | Tak |
 | Windsurf | `windsurf` | Tak |
 
-Obecna tabela obejmuje również OpenHands, Cline, Roo Code, Amp, OpenClaw, Pi, Qoder, Zed i wielu innych agentów korzystających ze wspólnego formatu skilli.
+Lista obejmuje również OpenHands, Cline, Roo Code, Amp, OpenClaw, Pi, Qoder, Zed i wielu innych agentów obsługujących ten sam format.
 
-Plik `agents/openai.yaml` zawiera opcjonalne metadane dla produktów OpenAI. Pozostali agenci mogą go bezpiecznie pominąć i korzystać ze wspólnych instrukcji w `SKILL.md`.
+Plik `agents/openai.yaml` zawiera opcjonalne metadane dla produktów OpenAI. Inni agenci mogą go pominąć i korzystać ze wspólnych instrukcji zapisanych w `SKILL.md`.
 
 Instalacja dla kilku agentów jednocześnie:
 
@@ -60,42 +60,42 @@ npx skills@latest add RobTar97/polish-writing-skills \
   -a codex -a claude-code -a opencode -a antigravity
 ```
 
-Pomiń `-a`, aby CLI interaktywnie wykryło zainstalowanych agentów.
+Pomiń opcję `-a`, aby CLI wykryło zainstalowanych agentów i pozwoliło wybrać ich interaktywnie.
 
 ## Szybka instalacja
 
-Zainstaluj skill z repozytorium za pomocą oficjalnego narzędzia [skills CLI](https://skills.sh/docs/cli) (zalecane):
+Zainstaluj skill z repozytorium za pomocą oficjalnego narzędzia [skills CLI](https://skills.sh/docs/cli):
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills
 ```
 
-Zainstaluj bezpośrednio konkretny skill:
+Zainstaluj tylko `natural-polish-writing`:
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills --skill natural-polish-writing
 ```
 
-Zainstaluj globalnie dla Codexa bez dodatkowych pytań:
+Zainstaluj go globalnie dla Codexa, bez dodatkowych pytań:
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills --skill natural-polish-writing -g -a codex -y
 ```
 
-Sprawdź, co CLI wykrywa w repozytorium, zanim coś zainstalujesz:
+Sprawdź przed instalacją, jakie skille CLI wykrywa w repozytorium:
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills --list
 ```
 
-Jeśli wolisz stałe polecenie, zainstaluj to samo otwarte CLI przez npm:
+Jeśli chcesz korzystać z polecenia bez `npx`, zainstaluj to samo otwarte narzędzie przez npm:
 
 ```bash
 npm install -g skills
 skills add RobTar97/polish-writing-skills --skill natural-polish-writing
 ```
 
-Uruchom skill jednorazowo bez instalacji:
+Użyj skilla jednorazowo, bez instalowania go:
 
 ```bash
 npx skills@latest use RobTar97/polish-writing-skills@natural-polish-writing
@@ -120,7 +120,7 @@ Ten przykład pokazuje, co się zmienia, co pozostaje bez zmian i czego skill ni
 
 **Zachowano:** nazwę produktu, limit 12 osób, 14-dniowy okres próbny, cenę 29 zł miesięcznie oraz wymóg połączenia z internetem.
 
-**Zmieniono:** ogólnikowe wprowadzenie, niepopartą konkretami ocenę marketingową, powtarzalne łączniki i pustą ramę ostrzegawczą. Nie dodano żadnej funkcji, dowodu, presji ani obietnicy.
+**Zmieniono:** usunięto ogólnikowe wprowadzenie, niepopartą konkretami ocenę marketingową, powtarzalne łączniki i pustą formułę ostrzegawczą. Nie dodano żadnej funkcji, dowodu, presji ani obietnicy.
 
 To przejrzysty przykład redakcyjny, a nie wynik automatycznego benchmarku. Kontrola odpowiada [priorytetom redakcyjnym](skills/natural-polish-writing/references/editing-priorities.md) i [liście kontrolnej](skills/natural-polish-writing/references/review-checklist.md) skilla.
 
@@ -128,7 +128,7 @@ To przejrzysty przykład redakcyjny, a nie wynik automatycznego benchmarku. Kont
 
 ### Publiczna próbka tekstu maszynowego
 
-[Zbiór ŚMIGIEL](https://huggingface.co/datasets/strebeyko/smigiel) to udostępniony na licencji CC BY 4.0 korpus do badań nad polskimi tekstami generowanymi maszynowo, wykorzystany w [zadaniu PolEval 2025](https://poleval.pl/tasks/task1). Poniższy krótki fragment ma w nim etykietę tekstu maszynowego (`model: bielik-md`, `strategy: dbs`):
+[Zbiór ŚMIGIEL](https://huggingface.co/datasets/strebeyko/smigiel) to udostępniony na licencji CC BY 4.0 korpus do badań nad polskimi tekstami generowanymi maszynowo. Wykorzystano go w [zadaniu PolEval 2025](https://poleval.pl/tasks/task1). Poniższy krótki fragment oznaczono w zbiorze jako tekst maszynowy (`model: bielik-md`, `strategy: dbs`):
 
 > „Ponadto, artykuł powinien być aktualny i uwzględniać najnowsze dane oraz interpretacje wydarzeń z turnieju, aby zapewnić czytelnikom najbardziej aktualne i kompletne informacje.”
 
@@ -136,11 +136,11 @@ To przejrzysty przykład redakcyjny, a nie wynik automatycznego benchmarku. Kont
 
 > Artykuł powinien uwzględniać najnowsze dane i interpretacje wydarzeń z turnieju, aby zapewnić czytelnikom kompletne informacje.
 
-Redakcja usuwa nieuzasadniony przecinek i puste *ponadto*, ogranicza trzy nakładające się określenia aktualności do jednego oraz skraca zdanie z 22 do 15 wyrazów. Zachowuje polecenie uwzględnienia najnowszych danych, interpretacji i kompletnych informacji; nie dodaje faktów.
+Redakcja usuwa nieuzasadniony przecinek i zbędne *ponadto*, pozostawia tylko jedno z trzech nakładających się określeń aktualności oraz skraca zdanie z 22 do 15 wyrazów. Zachowuje wymóg uwzględnienia najnowszych danych, interpretacji i kompletnych informacji. Nie dodaje żadnych faktów.
 
 ### Komunikat instytucjonalny
 
-#### Tekst źródłowy komunikatu
+#### Komunikat przed redakcją
 
 > Uprzejmie informujemy, iż w związku z koniecznością przeprowadzenia prac modernizacyjnych nastąpi czasowe wstrzymanie funkcjonowania systemu w godzinach od 22:00 do 23:00.
 
@@ -148,32 +148,32 @@ Redakcja usuwa nieuzasadniony przecinek i puste *ponadto*, ogranicza trzy nakła
 
 > System będzie niedostępny od 22:00 do 23:00 z powodu prac modernizacyjnych.
 
-Najpierw pojawia się informacja ważna dla odbiorcy. Przedział godzinowy i przyczyna pozostają bez zmian; tekst nie dodaje daty, przeprosin ani obietnicy.
+Najważniejsza dla odbiorcy informacja pojawia się na początku. Przedział godzinowy i przyczyna pozostają bez zmian. Tekst nie dodaje daty, przeprosin ani obietnicy.
 
 ### Powściągliwość akademicka
 
-#### Tekst źródłowy fragmentu akademickiego
+#### Fragment przed redakcją
 
 > W badaniu zastosowano regresję logistyczną. Wyniki nie pozwalają stwierdzić związku przyczynowego, ale mogą wskazywać na wzrost prawdopodobieństwa o 15%.
 
-#### Fragment akademicki po redakcji
+#### Fragment po redakcji
 
 > W badaniu zastosowano regresję logistyczną. Wyniki nie pozwalają stwierdzić związku przyczynowego, mogą jednak wskazywać na wzrost prawdopodobieństwa o 15%.
 
-Poprawna strona bierna pozostaje bez zmian. Redakcja zachowuje negację, ostrożną modalność, wartość 15% oraz różnicę między możliwym wskazaniem statystycznym a związkiem przyczynowym.
+Poprawna konstrukcja bezosobowa pozostaje bez zmian. Redakcja zachowuje negację, ostrożną modalność, wartość 15% oraz rozróżnienie między możliwym wzrostem prawdopodobieństwa a związkiem przyczynowym.
 
 ### Punkty oceny
 
-Każdy wymiar otrzymuje od 0 do 2 punktów: zgodność semantyczna i faktyczna, poprawność gramatyczna, dopasowanie gatunku i rejestru, naturalność i przepływ informacji oraz powściągliwość redakcyjna bez dopowiadania treści.
+Każdy z pięciu wymiarów oceniamy w skali od 0 do 2 punktów: wierność znaczeniu i faktom, poprawność gramatyczną, dopasowanie do gatunku i rejestru, naturalność i przepływ informacji oraz powściągliwość redakcyjną — bez dopowiadania treści.
 
-| Przypadek | Wierność | Gramatyka | Gatunek | Naturalność | Powściągliwość | Wynik |
+| Przypadek | Wierność | Gramatyka | Gatunek | Naturalność | Powściągliwość | Razem |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Opis funkcji Plan Pro | 2 | 2 | 2 | 2 | 2 | **10/10** |
 | Fragment ŚMIGIEL | 2 | 2 | 1 | 2 | 2 | **9/10** |
 | Komunikat instytucjonalny | 2 | 2 | 2 | 2 | 2 | **10/10** |
 | Fragment akademicki | 2 | 2 | 2 | 2 | 2 | **10/10** |
 
-Fragment korpusowy otrzymuje jeden punkt za dopasowanie gatunku, ponieważ publiczna próbka nie zawiera pełnego kontekstu dokumentu. To przejrzyste, ręczne kontrole redakcyjne, a nie wyniki badania z udziałem polskich czytelników, oceny detektorów ani deklaracje skuteczności benchmarkowej.
+Fragment korpusowy otrzymuje jeden punkt za dopasowanie do gatunku, ponieważ publiczna próbka nie zawiera pełnego kontekstu dokumentu. Są to jawne oceny redakcyjne wykonane ręcznie, a nie wyniki badania z udziałem polskich czytelników, wskazania detektorów czy deklaracje skuteczności w benchmarkach.
 
 ## Wypróbuj
 
@@ -195,20 +195,20 @@ Zachowaj wszystkie fakty i nie wygładzaj celowo nieformalnego tonu.
 ## Jak podejmuje decyzje
 
 - **Najpierw sens, później płynność.** Fakty, warunki, stopień pewności, chronologia, liczby, nazwy, atrybucja, cytaty, zobowiązania i konsekwencje pozostają bez zmian.
-- **Najpierw gatunek, później ogólna poprawność stylu.** Tekst akademicki, reklama, post, komunikat i tłumaczenie wymagają różnych decyzji.
+- **Najpierw gatunek, później ogólne reguły stylu.** Tekst akademicki, reklama, post, komunikat i tłumaczenie wymagają różnych decyzji.
 - **Najmniejsza wystarczająca zmiana.** Skill poprawia miejsca, które tego potrzebują, zamiast zastępować rozpoznawalny głos anonimowym „dobrym stylem”.
 - **Bez udawania człowieka.** Nie dodaje anegdot, opinii, slangu, literówek, dowodów ani fikcyjnych doświadczeń.
-- **Aktualne zasady, dane użyte w kontekście.** Pisownia i interpunkcja opierają się na zasadach RJP obowiązujących od 2026 roku; NKJP i WSJP wspierają opisowe decyzje dotyczące użycia i łączliwości.
+- **Aktualne zasady i dane odczytywane w kontekście.** Pisownia i interpunkcja opierają się na zasadach RJP obowiązujących od 2026 roku; NKJP i WSJP wspierają decyzje dotyczące użycia języka i łączliwości wyrazów.
 - **Bez obietnic dotyczących detektorów.** „Brzmienie jak AI” jest sygnałem jakości redakcyjnej, a nie dowodem autorstwa ani celem obchodzenia detekcji.
 
 ## Sposób zwracania wyników
 
-Gotowy tekst jest po polsku. Uwagi są formułowane w języku polecenia i pojawiają się tylko wtedy, gdy znaczenie ma przyjęte założenie, nierozstrzygnięta wieloznaczność, ostrzeżenie dotyczące zachowania treści albo granica zakresu.
+Gotowy tekst jest zawsze po polsku. Ewentualne uwagi są formułowane w języku polecenia i pojawiają się tylko wtedy, gdy trzeba wskazać istotne założenie, nierozstrzygniętą wieloznaczność, ryzyko zmiany sensu albo granicę zakresu.
 
 | Język polecenia | Gotowy tekst | Uwagi |
 | --- | --- | --- |
 | Polski | Polski | Polski |
-| Angielski lub inny | Najpierw gotowy tekst po polsku | Potem zwięzłe uwagi w języku polecenia |
+| Angielski lub inny | Najpierw tekst po polsku | Następnie zwięzłe uwagi w języku polecenia |
 
 ## Źródła i hierarchia autorytetu
 
@@ -233,12 +233,12 @@ skills/
     └── SKILL.md
 ```
 
-Publiczna część pakietu obejmuje wyłącznie instalowalny skill, potrzebne mu materiały referencyjne oraz zasoby prezentacyjne repozytorium. Raporty badawcze i materiały robocze pozostają poza pakietem.
+Publiczna część pakietu obejmuje wyłącznie instalowalny skill, jego materiały referencyjne oraz zasoby prezentacyjne repozytorium. Raporty badawcze i materiały robocze nie wchodzą w skład pakietu.
 
 ## Licencja
 
-Treści utworzone w tym repozytorium są dostępne na warunkach [licencji MIT](LICENSE). Materiały referencyjne odsyłają w razie potrzeby do źródeł urzędowych i specjalistycznych; treści osób trzecich nie są tu przedrukowywane ani ponownie licencjonowane.
+Treści opracowane w tym repozytorium są dostępne na warunkach [licencji MIT](LICENSE). Materiały referencyjne odsyłają w razie potrzeby do źródeł urzędowych i specjalistycznych. Treści osób trzecich nie są tu przedrukowywane ani obejmowane nową licencją.
 
 <div align="center">
-  <sub>Skill dla polszczyzny, która szanuje zdanie, autora i prawdę.</sub>
+  <sub>Dla polszczyzny, która szanuje sens, głos autora i fakty.</sub>
 </div>
