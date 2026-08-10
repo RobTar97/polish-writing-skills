@@ -1,0 +1,4 @@
+interface:
+  display_name: "Polish Plain Language"
+  short_description: "Task-focused plain Polish rewriting"
+  default_prompt: "Use $polish-plain-language to rewrite this functional Polish text so readers can quickly find, understand, and use the information without changing its meaning."

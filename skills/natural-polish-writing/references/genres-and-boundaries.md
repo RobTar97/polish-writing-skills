@@ -19,6 +19,8 @@ Use neutral contemporary Polish as a fallback, not as permission to erase a reco
 
 ## Respect scope boundaries
 
+For functional content whose primary success criterion is whether the reader can find, understand, and act on the information, use `polish-plain-language`. Natural editing may improve such text locally, but it should not substitute for reader-task extraction, information-architecture changes, explicit condition and consequence handling, or domain-specific plain-language validation.
+
 For UI strings, locale files, keys, placeholders, tags, ICU branches, or other structured resources:
 
 1. Preserve every technical token and runtime branch exactly.

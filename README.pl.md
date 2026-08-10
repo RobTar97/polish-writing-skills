@@ -1,11 +1,11 @@
 <div align="center">
   <img src="assets/readme-hero.png" alt="Abstrakcyjne karminowe i grafitowe formy na kremowej siatce redakcyjnej" width="100%" />
   <h1>Polish Writing Skills</h1>
-  <p><strong>Naturalna polszczyzna dopasowana do gatunku i sytuacji — bez zmiany sensu.</strong></p>
-  <p>Otwarty skill dla agentów AI, który redaguje i tłumaczy teksty na współczesną polszczyznę, ściśle zachowując fakty.</p>
+  <p><strong>Naturalna polszczyzna — i teksty funkcjonalne, na podstawie których można działać.</strong></p>
+  <p>Dwa otwarte skille dla agentów AI: do wiernej redakcji i tłumaczenia oraz do prostego języka zorientowanego na odbiorcę.</p>
   <p>
     <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-292827?style=flat-square" alt="Zgodność z Agent Skills" /></a>
-    <img src="https://img.shields.io/badge/skills-1-b62234?style=flat-square" alt="Jeden skill" />
+    <img src="https://img.shields.io/badge/skills-2-b62234?style=flat-square" alt="Dwa skille" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-5b5753?style=flat-square" alt="Licencja MIT" /></a>
   </p>
   <p>
@@ -16,9 +16,9 @@
 
 ---
 
-## Jeden skill, jedna umowa redakcyjna
+## Dwa skille, dwie umowy redakcyjne
 
-Skill poprawia polszczyznę, ale nie zmienia po cichu tego, co mówi tekst.
+Każdy skill ma jedno główne zadanie. Oba zachowują istotny sens tekstu.
 
 <table>
   <tr>
@@ -29,13 +29,21 @@ Skill poprawia polszczyznę, ale nie zmienia po cichu tego, co mówi tekst.
       <p><strong>Najlepszy wybór do:</strong> artykułów, treści internetowych i marketingowych, wiadomości, ogłoszeń, postów społecznościowych, tekstów akademickich oraz tłumaczeń na język polski.</p>
     </td>
   </tr>
+  <tr>
+    <td width="100%" valign="top">
+      <img src="assets/plain-language.svg" alt="Ilustracja Polish Plain Language" width="100%" />
+      <h3><a href="skills/polish-plain-language/SKILL.md">polish-plain-language</a></h3>
+      <p>Prosta polszczyzna funkcjonalna, w której odbiorca szybko znajduje i wykorzystuje potrzebne informacje.</p>
+      <p><strong>Najlepszy wybór do:</strong> pism i informacji publicznych, procedur, wyjaśnień finansowych lub medycznych, instrukcji, formularzy, komunikatów obsługi klienta, ostrzeżeń i błędów.</p>
+    </td>
+  </tr>
 </table>
 
-> W przypadku strukturyzowanych zasobów interfejsu lub korespondencji wymagającej szczególnego wyczucia relacji skill ogranicza się do bezpiecznej korekty językowej. Wskazuje też elementy, które wymagają specjalistycznej lokalizacji albo redakcji biznesowej.
+> `natural-polish-writing` optymalizuje brzmienie i dopasowanie do gatunku. `polish-plain-language` może przebudować kolejność informacji wokół zadania odbiorcy. Żaden z nich nie zmienia po cichu faktów, warunków, praw, obowiązków, ostrzeżeń ani terminów.
 
 ## Zgodność z agentami
 
-Tak. `natural-polish-writing` to przenośny skill zgodny z podstawowym formatem Agent Skills. Jego rdzeniem jest standardowy plik `SKILL.md` oraz materiały referencyjne w Markdownie. Nie wymaga hooków, narzędzi właściwych dla konkretnego modelu ani zamkniętego środowiska uruchomieniowego. Oficjalna [tabela zgodności skills CLI](https://github.com/vercel-labs/skills#compatibility) potwierdza obsługę tego formatu przez najpopularniejszych agentów programistycznych.
+Tak. Oba skille korzystają z podstawowego, przenośnego formatu Agent Skills. Ich rdzeniem są standardowe pliki `SKILL.md` oraz materiały referencyjne w Markdownzie. Nie wymagają hooków, narzędzi właściwych dla konkretnego modelu ani zamkniętego środowiska uruchomieniowego. Oficjalna [tabela zgodności skills CLI](https://github.com/vercel-labs/skills#compatibility) potwierdza obsługę tego formatu przez najpopularniejszych agentów programistycznych.
 
 | Agent | Identyfikator CLI | Obsługa skilla |
 | --- | --- | --- |
@@ -56,7 +64,7 @@ Instalacja dla kilku agentów jednocześnie:
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills \
-  --skill natural-polish-writing \
+  --skill natural-polish-writing polish-plain-language \
   -a codex -a claude-code -a opencode -a antigravity
 ```
 
@@ -70,16 +78,20 @@ Zainstaluj skill z repozytorium za pomocą oficjalnego narzędzia [skills CLI](h
 npx skills@latest add RobTar97/polish-writing-skills
 ```
 
-Zainstaluj tylko `natural-polish-writing`:
+Zainstaluj tylko wybrany skill:
 
 ```bash
 npx skills@latest add RobTar97/polish-writing-skills --skill natural-polish-writing
 ```
 
-Zainstaluj go globalnie dla Codexa, bez dodatkowych pytań:
+```bash
+npx skills@latest add RobTar97/polish-writing-skills --skill polish-plain-language
+```
+
+Zainstaluj oba globalnie dla Codexa, bez dodatkowych pytań:
 
 ```bash
-npx skills@latest add RobTar97/polish-writing-skills --skill natural-polish-writing -g -a codex -y
+npx skills@latest add RobTar97/polish-writing-skills --skill natural-polish-writing polish-plain-language -g -a codex -y
 ```
 
 Sprawdź przed instalacją, jakie skille CLI wykrywa w repozytorium:
@@ -101,7 +113,13 @@ Użyj skilla jednorazowo, bez instalowania go:
 npx skills@latest use RobTar97/polish-writing-skills@natural-polish-writing
 ```
 
+```bash
+npx skills@latest use RobTar97/polish-writing-skills@polish-plain-language
+```
+
 ## Zobacz, jak działa
+
+### Naturalna polszczyzna
 
 Ten przykład pokazuje, co się zmienia, co pozostaje bez zmian i czego skill nie dopowiada.
 
@@ -123,6 +141,29 @@ Ten przykład pokazuje, co się zmienia, co pozostaje bez zmian i czego skill ni
 **Zmieniono:** usunięto ogólnikowe wprowadzenie, niepopartą konkretami ocenę marketingową, powtarzalne łączniki i pustą formułę ostrzegawczą. Nie dodano żadnej funkcji, dowodu, presji ani obietnicy.
 
 To przejrzysty przykład redakcyjny, a nie wynik automatycznego benchmarku. Kontrola odpowiada [priorytetom redakcyjnym](skills/natural-polish-writing/references/editing-priorities.md) i [liście kontrolnej](skills/natural-polish-writing/references/review-checklist.md) skilla.
+
+### Prosty język polski
+
+Skill prostego języka zmienia najpierw architekturę informacji, a dopiero później brzmienie poszczególnych zdań.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Przed</h3>
+      <p>W związku z przeprowadzoną weryfikacją kompletności dokumentacji informujemy o stwierdzeniu braku załącznika nr 3, którego niedostarczenie w terminie 7 dni od dnia otrzymania niniejszego wezwania skutkować będzie pozostawieniem wniosku bez rozpoznania.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Po</h3>
+      <p><strong>Doślij załącznik nr 3 w ciągu 7 dni od otrzymania tego wezwania.</strong><br />W Twoim wniosku brakuje tego załącznika.<br />Jeśli nie dostarczysz go w terminie, pozostawimy wniosek bez rozpoznania.</p>
+    </td>
+  </tr>
+</table>
+
+**Zachowano:** numer załącznika, siedmiodniowy termin i sposób jego obliczania, informację o braku dokumentu, wymagane działanie oraz konsekwencję proceduralną.
+
+**Zmieniono:** działanie odbiorcy i termin pojawiają się na początku; usunięto instytucjonalne wprowadzenie i strukturę nominalną. Nie dodano kanału wysyłki, podstawy prawnej ani prawa do odwołania.
+
+Kontrola odpowiada [umowie transformacji](skills/polish-plain-language/references/transformation-contract.md) i [liście kontrolnej](skills/polish-plain-language/references/review-checklist.md) skilla.
 
 ## Więcej zweryfikowanych przykładów
 
@@ -192,18 +233,32 @@ Użyj $natural-polish-writing, aby zredagować ten fragment po polsku.
 Zachowaj wszystkie fakty i nie wygładzaj celowo nieformalnego tonu.
 ```
 
+```text
+Użyj $polish-plain-language, aby przebudować ten komunikat wokół zadania odbiorcy.
+Zachowaj każdy termin, warunek, skutek, prawo i wymagane pojęcie.
+```
+
+```text
+Użyj $polish-plain-language, aby odbiorca szybko znalazł decyzję, wymagane działanie,
+termin i konsekwencje. Nie zmieniaj podstawy prawnej ani warunków.
+```
+
 ## Jak podejmuje decyzje
 
-- **Najpierw sens, później płynność.** Fakty, warunki, stopień pewności, chronologia, liczby, nazwy, atrybucja, cytaty, zobowiązania i konsekwencje pozostają bez zmian.
-- **Najpierw gatunek, później ogólne reguły stylu.** Tekst akademicki, reklama, post, komunikat i tłumaczenie wymagają różnych decyzji.
-- **Najmniejsza wystarczająca zmiana.** Skill poprawia miejsca, które tego potrzebują, zamiast zastępować rozpoznawalny głos anonimowym „dobrym stylem”.
+- **Oddzielne cele.** Naturalna redakcja optymalizuje brzmienie i dopasowanie do gatunku; prosty język — znajdowalność, zrozumiałość i działanie.
+- **Najpierw sens, później ulepszenie.** Fakty, warunki, stopień pewności, chronologia, liczby, prawa, obowiązki, ostrzeżenia, zobowiązania i konsekwencje pozostają bez zmian.
+- **Najpierw zadanie odbiorcy, później długość zdań.** Skill prostego języka ustala, co odbiorca musi wiedzieć lub zrobić, a następnie dobiera architekturę informacji.
+- **Gatunek i zabezpieczenia domenowe.** Teksty akademickie, administracyjne, finansowe, medyczne, usługowe i instruktażowe wymagają różnych decyzji.
+- **Najmniejsza wystarczająca ingerencja.** Naturalna redakcja preferuje poprawki lokalne; prosty język zmienia strukturę tylko wtedy, gdy wymaga tego sukces odbiorcy.
+- **Stabilna terminologia funkcjonalna.** Skill prostego języka nie wprowadza synonimów tylko po to, by uniknąć powtórzeń.
 - **Bez udawania człowieka.** Nie dodaje anegdot, opinii, slangu, literówek, dowodów ani fikcyjnych doświadczeń.
 - **Aktualne zasady i dane odczytywane w kontekście.** Pisownia i interpunkcja opierają się na zasadach RJP obowiązujących od 2026 roku; NKJP i WSJP wspierają decyzje dotyczące użycia języka i łączliwości wyrazów.
+- **Prosty język to nie ETR.** Skill nie stosuje reguł tekstu łatwego do czytania i zrozumienia ani nie deklaruje walidacji ETR bez procesu z udziałem odbiorców docelowych.
 - **Bez obietnic dotyczących detektorów.** „Brzmienie jak AI” jest sygnałem jakości redakcyjnej, a nie dowodem autorstwa ani celem obchodzenia detekcji.
 
 ## Sposób zwracania wyników
 
-Gotowy tekst jest zawsze po polsku. Ewentualne uwagi są formułowane w języku polecenia i pojawiają się tylko wtedy, gdy trzeba wskazać istotne założenie, nierozstrzygniętą wieloznaczność, ryzyko zmiany sensu albo granicę zakresu.
+Gotowy tekst jest zawsze po polsku. Oba skille zwracają najpierw ukończony tekst. Ewentualne uwagi są formułowane w języku polecenia i pojawiają się tylko wtedy, gdy trzeba wskazać istotne założenie, nierozstrzygniętą wieloznaczność, ryzyko zmiany sensu albo granicę zakresu.
 
 | Język polecenia | Gotowy tekst | Uwagi |
 | --- | --- | --- |
@@ -212,33 +267,42 @@ Gotowy tekst jest zawsze po polsku. Ewentualne uwagi są formułowane w języku 
 
 ## Źródła i hierarchia autorytetu
 
-Skill odróżnia normy językowe od preferencji redakcyjnych:
+Skille odróżniają normy językowe od preferencji redakcyjnych i metod prostego języka:
 
 - [Rada Języka Polskiego](https://rjp.pan.pl/zasady-pisowni-i-interpunkcji-polskiej-2/) — aktualna pisownia i interpunkcja.
 - [Narodowy Korpus Języka Polskiego](https://nkjp.pl/) — opisowe dane korpusowe.
 - [Wielki słownik języka polskiego PAN](https://wsjp.pl/) — znaczenia, gramatyka, kwalifikatory stylistyczne i typowe połączenia.
 - [Zasady prostego języka na Gov.pl](https://www.gov.pl/web/cyfryzacja/prosty-jezyk) — wskazówki dla tekstów publicznych i instruktażowych, a nie uniwersalny wzorzec stylu.
+- [Zasady dostępności cyfrowej na Gov.pl](https://www.gov.pl/web/dostepnosc-cyfrowa/cztery-zasady-dostepnosci-cyfrowej) — zrozumiałe etykiety, instrukcje, ostrzeżenia i obsługa błędów.
+- [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) — nadrzędne zasady prostego języka.
+- [ISO 24495-2:2025](https://www.iso.org/standard/85774.html) — prosta komunikacja prawna oraz zachowanie praw i obowiązków.
 
 ## Struktura repozytorium
 
 ```text
 assets/
 ├── natural-writing.svg
+├── plain-language.svg
 └── readme-hero.png
 skills/
-└── natural-polish-writing/
+├── natural-polish-writing/
+│   ├── agents/
+│   │   └── openai.yaml
+│   ├── references/
+│   └── SKILL.md
+└── polish-plain-language/
     ├── agents/
     │   └── openai.yaml
     ├── references/
     └── SKILL.md
 ```
 
-Publiczna część pakietu obejmuje wyłącznie instalowalny skill, jego materiały referencyjne oraz zasoby prezentacyjne repozytorium. Raporty badawcze i materiały robocze nie wchodzą w skład pakietu.
+Instalowalne skille zawierają wyłącznie instrukcje uruchomieniowe i skupione materiały referencyjne. W katalogu głównym pozostają także [raport wdrożeniowy prostego języka](polish-plain-language.md) oraz [pełny raport badawczy](polish-plain-language%20deep-research-report.md), które dokumentują rozwój projektu.
 
 ## Licencja
 
 Treści opracowane w tym repozytorium są dostępne na warunkach [licencji MIT](LICENSE). Materiały referencyjne odsyłają w razie potrzeby do źródeł urzędowych i specjalistycznych. Treści osób trzecich nie są tu przedrukowywane ani obejmowane nową licencją.
 
 <div align="center">
-  <sub>Dla polszczyzny, która szanuje sens, głos autora i fakty.</sub>
+  <sub>Dla polszczyzny, która szanuje zdanie, odbiorcę i prawdę.</sub>
 </div>

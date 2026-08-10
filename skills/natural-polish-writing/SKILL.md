@@ -1,6 +1,6 @@
 ---
 name: natural-polish-writing
-description: Edit, rewrite, or translate non-UI text into natural, contemporary Polish while preserving facts, intent, uncertainty, terminology, and voice. Use for articles, web or marketing prose, ordinary messages and notices, social posts, academic prose, translations into Polish, or requests to make Polish sound natural, native, less mechanical, mniej sztucznie, bardziej naturalnie, or poprawić styl without detector evasion. For structured locale resources or relationship-sensitive formal correspondence, perform only a safe language pass and flag the specialized work still required.
+description: Edit, rewrite, or translate non-UI text into natural, contemporary Polish while preserving facts, intent, uncertainty, terminology, and voice. Use for articles, web or marketing prose, ordinary messages and notices, social posts, academic prose, translations into Polish, or requests to make Polish sound natural, native, less mechanical, mniej sztucznie, bardziej naturalnie, or poprawić styl without detector evasion. For functional content whose main goal is reader findability, comprehension, or task completion, use polish-plain-language instead. For structured locale resources or relationship-sensitive formal correspondence, perform only a safe language pass and flag the specialized work still required.
 ---
 
 # Natural Polish Writing
@@ -11,6 +11,8 @@ description: Edit, rewrite, or translate non-UI text into natural, contemporary 
 2. Infer missing context conservatively. Ask only when a choice would materially alter the result; otherwise state a consequential assumption briefly.
 3. Default to contemporary `pl-PL`, the current RJP 2026 rules, and the smallest edit that solves the problem.
 4. Preserve an explicit house style or glossary unless it conflicts with the user's request or a factual requirement.
+
+If the primary assignment is to make administrative, instructional, financial, healthcare, public-service, warning, error, or customer-service content easier to find, understand, and act on, use `polish-plain-language`. Use this skill when the primary objective is natural expression, genre fit, voice, or faithful translation.
 
 For structured locale files, placeholders, message syntax, or in-product interaction design, preserve every technical token and limit the work to a safe language pass. For high-stakes or relationship-sensitive formal correspondence, improve the Polish without inventing protocol, commitments, apologies, authority, or organizational policy. Briefly identify the need for specialized localization or business-writing work.
 
